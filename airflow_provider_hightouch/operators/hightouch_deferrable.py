@@ -72,9 +72,8 @@ class HightouchDeferrableSyncOperator(BaseOperator):
 
         if self.sync_slug:
             self.log.info(f"Triggering sync asynchronously using slug ID: {self.sync_slug}...")
-
             sync_request_id = hook.start_sync(sync_slug=self.sync_slug)
-            self.sync_id = hook.get_sync_from_slug(sync_slug=self.sync_slug)  # Retrieve sync_id based on slug
+            self.sync_id = hook.get_sync_from_slug(sync_slug=self.sync_slug)
         else:
             self.log.info(f"Triggering sync asynchronously using sync ID: {self.sync_id}...")
             sync_request_id = hook.start_sync(sync_id=self.sync_id)
