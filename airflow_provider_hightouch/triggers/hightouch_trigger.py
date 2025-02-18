@@ -1,5 +1,5 @@
 import asyncio
-import os
+
 from typing import Any, AsyncIterator, Dict, Optional, Tuple
 
 from airflow.triggers.base import BaseTrigger, TriggerEvent
